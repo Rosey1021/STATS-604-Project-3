@@ -66,7 +66,7 @@ banana_df
 ## -----------------------------------------------------------------------------
 # Plot the distribution of the rating difference
 ggplot(banana_df, aes(x = rating_diff)) +
-  geom_histogram(binwidth = 1, fill = "blue", color = "black") +
+  geom_histogram(binwidth = 1, fill = "lightblue", color = "black") +
   labs(title = "Distribution of Rating Difference", x = "Rating Difference", y = "Frequency")
 
 
@@ -132,7 +132,7 @@ for(i in 0:(2^10 - 1)){
 
 # Plot the distribution of the permuted differences in means
 plot_1 <- ggplot() +
-  geom_histogram(aes(x = perm_diffs), binwidth = 1, fill = "blue", color = "black") +
+  geom_histogram(aes(x = perm_diffs), binwidth = 1, fill = "lightblue", color = "black") +
   geom_vline(xintercept = obs_control_paper_diff, color = "red") +
   labs(title = "Distribution of Permutated Differences in Means (Paper Bag - Control)", x = "Difference in Means", y = "Frequency")
 
@@ -187,7 +187,7 @@ for(i in 0:(2^10 - 1)){
 
 # Plot the distribution of the permuted differences in means
 plot_2<- ggplot() +
-  geom_histogram(aes(x = perm_diffs), binwidth = 1, fill = "blue", color = "black") +
+  geom_histogram(aes(x = perm_diffs), binwidth = 1, fill = "lightblue", color = "black") +
   geom_vline(xintercept = obs_control_plastic_diff, color = "red") +
   labs(title = "Distribution of Permutated Differences in Means (Plastic Bag - Control)", x = "Difference in Means", y = "Frequency")
 
@@ -242,7 +242,7 @@ for(i in 0:(2^10 - 1)){
 
 # Plot the distribution of the permuted differences in means
 plot_3 <- ggplot() +
-  geom_histogram(aes(x = perm_diffs), binwidth = 1, fill = "blue", color = "black") +
+  geom_histogram(aes(x = perm_diffs), binwidth = 1, fill = "lightblue", color = "black") +
   geom_vline(xintercept = obs_paper_plastic_diff, color = "red") +
   labs(title = "Distribution of Permutated Differences in Means (Plastic Bag - Paper Bag)", x = "Difference in Means", y = "Frequency")
 

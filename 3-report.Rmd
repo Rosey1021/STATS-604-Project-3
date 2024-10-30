@@ -1,5 +1,6 @@
 ---
-title: 'Stats 604: Project 3'
+title: 'Ripening Bananas:
+To Bag or Not to Bag?'
 author: "Yizhou Gu, Noah Kochanski, Samuel Rosenberg"
 date: "10/30/24"
 output:
@@ -35,7 +36,7 @@ knitr::include_graphics("assets/tester.png")
 
 # Methods
 
-To answer the research question, we will do three pre-specified hypothesis tests using permutation tests. The three null hypotheses are as follows:
+To answer the research question, we did three pre-specified hypothesis tests using permutation tests. The three null hypotheses are as follows:
 
 * $H_{0,1}$ = There is no difference in the ripening speed between using paper bag and no bag 
 
@@ -43,7 +44,7 @@ To answer the research question, we will do three pre-specified hypothesis tests
 
 * $H_{0,3}$ = There is no difference in the ripening speed between using paper bag and plastic bag 
 
-Corresponding to each null hypothesis, we will run a different permutation test. For each banana, we will calculate the difference between post-treatment and pre-treatment ripeness ratings. Since the experiment was run over a fixed period, this will act as our measure of ripening speed. We will use the difference in means statistic as the test statistic. For each permutation test, we will only take the subset of the data that corresponds to the pair of interest and permute the labels in that subset. We will calculate the observed difference in means between the two groups and then permute the treatment assignments to generate a distribution of differences in means under the null hypothesis. We will then calculate the p-value under a two-sided test, and determine its significance using $\alpha = 0.5$ under a Bonferroni correction.
+Corresponding to each null hypothesis, we ran a different permutation test. For each banana, we calculated the difference between post-treatment and pre-treatment ripeness ratings. Since the experiment was run over a fixed period, this acts as our measure of ripening speed. We used the difference in means statistic as the test statistic. For each permutation test, we only took the subset of the data that corresponded to the pair of interest and permuted the labels in that subset. We calculated the observed difference in means between the two groups and then permuted the treatment assignments to generate a distribution of differences in means under the null hypothesis. We then calculated the p-value under a two-sided test, and determined its significance using $\alpha = 0.5$ under a Bonferroni correction.
 
 # Results
 
@@ -69,7 +70,11 @@ print(plot_3)
 
 # Conclusion
 
-This study examined the impact of different storage methods on banana ripening speed over a four-day period. Results from the permutation test indicate that bananas stored in plastic bags ripen significantly faster than bananas stored in open air or in paper bags. Additionally, the permutation tests indicate that there was no significant difference in speed of ripening from using paper bags. This suggests that the differing speed of ripening may be due to the material used to store bananas. While this study shows these baseline results, there are several limitations to be considered. First, the sample size was relatively small, which may limit the generalizability of our findings. A larger sample would provide more robust estimates of the effects observed here. Additionally, ripeness was assessed using a subjective visual color rating by a single rater, which introduces variability due to individual perception. While color was a primary indicator of ripeness, the photographs used for rating did not capture other important ripeness indicators, such as texture, smell, or softness, which might provide a fuller picture of ripening progression. Future studies could benefit from objective and multi-dimensional ripeness measurements to address these factors more comprehensively.
+This study examined the impact of different storage methods on banana ripening speed over a four-day period. Results from the permutation test indicate that bananas stored in plastic bags ripen significantly differently than bananas stored in open air or in paper bags. Anecdotally, it seems that the plastic bags actually inhibited the ripening of the bananas relative to both the control and paper bags, possibly due to their fresh sealing nature. 
+
+Additionally, the permutation tests indicate that there was no significant difference in speed of ripening from using paper bags. This suggests that the differing speed of ripening may be due to the material used to store bananas. 
+
+While this study shows these baseline results, there are several limitations to be considered. To confirm that plastic bags do indeed slow ripening, we could run another experiment with this one-sided hypothesis pre-specified. Further, the sample size was relatively small, which may limit the generalizability of our findings. A larger sample would provide more robust estimates of the effects observed here. Additionally, ripeness was assessed using a subjective visual color rating by a single rater, which introduces variability due to individual perception. While color was a primary indicator of ripeness, the photographs used for rating did not capture other important ripeness indicators, such as texture, smell, or softness, which might provide a fuller picture of ripening progression. Future studies could benefit from objective and multi-dimensional ripeness measurements to address these factors more comprehensively. 
 
 
 \newpage
