@@ -1,19 +1,12 @@
----
-title: "Project 3"
-author: "Yizhou Gu"
-date: "2024-10-22"
-output: html_document
----
-
-```{r include=FALSE}
+## ----include=FALSE------------------------------------------------------------
 knitr::opts_chunk$set(echo = TRUE)
-```
 
-```{r}
+
+## -----------------------------------------------------------------------------
 library(ggplot2)
-```
 
-```{r}
+
+## -----------------------------------------------------------------------------
 # Unique identifiers of each banana based on weight (and additional letter if weight tie)
 banana_ids <- c(
   "130", "131", "140",
@@ -51,9 +44,9 @@ set.seed(123)
 banana_df$treatment <- unlist(lapply(1:10, function(x){sample(0:2, 3, replace = FALSE)}))
 
 banana_df
-```
 
-```{r}
+
+## -----------------------------------------------------------------------------
 banana_rating <- read.csv("banana_ratings_final.csv")
 # Reorder the banana_rating data frame by the BananaID
 banana_rating <- banana_rating[order(banana_rating$BananaID),]
@@ -68,16 +61,16 @@ banana_df$pre_rating <- banana_rating$Rating[31:60]
 banana_df$rating_diff <- banana_df$post_rating - banana_df$pre_rating
 
 banana_df
-```
 
-```{r}
+
+## -----------------------------------------------------------------------------
 # Plot the distribution of the rating difference
 ggplot(banana_df, aes(x = rating_diff)) +
   geom_histogram(binwidth = 1, fill = "blue", color = "black") +
   labs(title = "Distribution of Rating Difference", x = "Rating Difference", y = "Frequency")
-```
 
-```{r}
+
+## -----------------------------------------------------------------------------
 ggplot(banana_df, aes(x = rating_diff, y = as.factor(treatment), fill = as.factor(treatment))) +
   geom_boxplot() + 
   labs(title = "Distribution of Rating Difference", 
@@ -91,13 +84,9 @@ ggplot(banana_df, aes(x = rating_diff, y = as.factor(treatment), fill = as.facto
                                "1" = "Plastic Bag", 
                                "2" = "Paper Bag")) +  # Map numeric values to labels
   theme_minimal()
-```
 
 
-
-
-
-```{r}
+## -----------------------------------------------------------------------------
 
 # Permutaion Test 1: Control vs. Paper Bag
 
@@ -149,9 +138,9 @@ plot_1 <- ggplot() +
 
 # Calculate the p-value
 p_value_1 <- sum(abs(perm_diffs) >= abs(obs_control_paper_diff)) / length(perm_diffs)
-```
 
-```{r}
+
+## -----------------------------------------------------------------------------
 
 # Permutation Test 2: Control vs. Plastic Bag
 
@@ -204,13 +193,9 @@ plot_2<- ggplot() +
 
 # Calculate the p-value
 p_value_2 <- sum(abs(perm_diffs) >= abs(obs_control_plastic_diff)) / length(perm_diffs)
-```
 
 
-
-
-
-```{r}
+## -----------------------------------------------------------------------------
 
 # Permutation Test 3: Paper Bag vs. Plastic Bag
 
@@ -263,4 +248,4 @@ plot_3 <- ggplot() +
 
 # Calculate the p-value
 p_value_3 <- sum(abs(perm_diffs) >= abs(obs_paper_plastic_diff)) / length(perm_diffs)
-```
+
